@@ -8,6 +8,7 @@ const permission = require('../middlewares/Permission');
 
 router.post('/login', permission.authPermission, tryCatch(authController.login));
 router.post('/register', permission.authPermission, tryCatch(authController.register));
+router.post('/add-Livreur', permission.userPermission, tryCatch(authController.addLivreur));
 router.get('/verify-email/:token', tryCatch(authController.verifyEmail));
 router.post('/reset-password', permission.userPermission, tryCatch(authController.resetPassword));
 router.post('/forget-password', permission.authPermission, tryCatch(authController.forgetPassword));
