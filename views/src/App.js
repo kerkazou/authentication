@@ -1,5 +1,6 @@
 import React from 'react';
 import{BrowserRouter,Routes,Route} from "react-router-dom";
+import axios from 'axios'
 
 import UserPrivateRoutes from './PrivateRoutes/UserPrivateRoutes'
 import AuthPrivateRoutes from './PrivateRoutes/AuthPrivateRoutes'
@@ -17,6 +18,14 @@ import Client from './components/user/Client'
 import PageNotFound from './components/auth/PageNotFound'
 
 function App() {
+  window.addEventListener('storage', () => {
+    axios.get('http://localhost:9000/api/auth/logout')
+      .then(()=>{
+        localStorage.clear();
+        window.location.replace('http://localhost:3000/login')
+      })
+      .catch(()=>{console.log('Error')})
+  })
   
   return (
     <BrowserRouter>
