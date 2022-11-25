@@ -24,7 +24,7 @@ function SidBar() {
           <li className="nav-item text-center">
             <a className="nav-link d-flex align-items-center gap-3" href="">
               <i className="bi bi-person-bounding-box fs-4 fw-bold d-md-none d-block"></i>
-              <span className='d-none d-md-block'>Username</span>
+              <span className='d-none d-md-block'>{localStorage.getItem('username')}</span>
             </a>
           </li>
           <li className="nav-item text-center">

@@ -29,7 +29,7 @@ const register = async (req, res) => {
     if(findEmail) throw Error('Email already exist')
     const hash = await bcrypt.hash(body.password, saltRounds);
     const user = await User.create({
-        ...body, password: hash, roles: '636fae98fb2766d1a0c531f2', verification: false
+        ...body, password: hash, roles: '637de58c1c73d7e2ef657a45', verification: false
     })
     if(user) {
         mailer.main('verify-email',body.email)
@@ -46,7 +46,7 @@ const addLivreur = async (req, res) => {
     if(findEmail) throw Error('Email already exist')
     const hash = await bcrypt.hash(body.password, saltRounds);
     const user = await User.create({
-        ...body, password: hash, roles: '636fae98fb2766d1a0c531f3', verification: false
+        ...body, password: hash, roles: '637de58c1c73d7e2ef657a46', verification: true
     })
     if(user) {
         mailer.main('verify-email',body.email)

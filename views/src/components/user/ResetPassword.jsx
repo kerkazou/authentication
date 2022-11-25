@@ -22,7 +22,6 @@ function Resetpassword() {
         .then(e=>{
             if(e.data.message) {
               toastr.success(e.data.message, {positionClass: "toast-bottom-left"})
-              window.location.replace(`http://localhost:3000/api/user/client/me`)
             }
             else toastr.warning(e.data, {positionClass: "toast-bottom-left"})
         })
